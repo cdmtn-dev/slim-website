@@ -1,0 +1,31 @@
+.table {
+    .table-title {
+        margin-bottom: 10px;
+        font-size: 14px;
+        opacity: .5;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    table {
+        width: 100%;
+        color: var(--text-alt-color);
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        outline: 1px solid var(--divider);
+
+        tr {
+            &:nth-child(even) {
+                background-color: var(--table-bg);
+            }
+            th {
+                text-align: left;
+            }
+        }
+
+        td, th {
+            padding: 10px 15px;
+        }
+    }
+}

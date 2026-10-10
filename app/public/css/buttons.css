@@ -1,0 +1,26 @@
+.button {
+    background: var(--default-button-bg);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 100px;
+    font-weight: 500;
+    transition: .2s;
+
+    &:hover {
+        background: var(--default-button-bg-hovered);
+        cursor: pointer;
+    }
+
+    &.outlined {
+        color: var(--text-alt-color);
+        background: transparent;
+        border: 1px solid var(--default-button-bg);
+
+        &:hover {
+            background: var(--default-button-bg);
+            color: var(--text-color);
+        }
+    }
+}

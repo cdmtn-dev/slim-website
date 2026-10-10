@@ -1,0 +1,10 @@
+{
+    "main": "app/main",
+    "uses": {
+        "enabled": true,
+        "style": "import"
+    },
+    "components": {
+        "useBEMClasses": true
+    }
+}

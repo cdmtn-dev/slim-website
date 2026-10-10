@@ -1,0 +1,130 @@
+use path from "node:path"
+
+use { LinkButton } from "./button-component"
+use { Video } from "./video-component"
+use { Table } from "./table-component"
+use { Spacer } from "./spacer-component"
+use { CompImages } from "./comp-images-component"
+
+use { Header } from "./header-component"
+
+use { PUBLIC_PATH } from "../paths"
+
+use { HeaderStruct, HeaderLinksStruct } from "./structures"
+
+export component Main() {
+    return
+        <div class="main">
+            ${Header({
+                title: "Slim",
+                links: [
+                    {
+                        title: "Why",
+                        url: "#why"
+                    },
+                    {
+                        title: "Examples",
+                        url: "#examples"
+                    },
+                    {
+                        title: "Source",
+                        url: "/github"
+                    }
+                ]
+            })}
+            ${Hero()}
+            ${SectionWrapper()}
+        </div>
+}
+
+export component SectionWrapper() {
+    return 
+        <div class="sections-wrapper">
+            ${WhySection()}
+        </div>
+}
+
+export component Hero(props) {
+    return 
+        <div class="hero">
+            ${Video({ url: "/public/media/bg.webm", id: "video-bg" })}
+            
+            <div class="&-main">
+                <h1 class="&__title">A better <span class="keyword">JavaScript</span></h1>
+                <p class="&__description">
+                    Slim extends JavaScript with runtime types, structs, operators, and components, compiling to plain
+                    <img class="&__js-logo" src="${PUBLIC_PATH}/media/js-logo.png">
+                </p>
+
+                <div class="&__buttons">
+                    ${LinkButton({ title: "Github", url: "/github" })}
+                    ${LinkButton({ title: "Why should I use Slim?", url: "#why", type: "outlined" })}
+                </div>
+            </div>
+        </div>
+}
+
+export component WhySection() {
+    return 
+        <div class="section why" id="why">
+            <h1 class="&-title">Why i should use Slim?</h1>
+            <p class="&-description">Slim is for projects where data validation needs to stay in the running program. It compiles to JavaScript and works directly with npm packages and the JavaScript ecosystem.</p>
+
+            ${Table({
+                title: "Language Comparison: JavaScript, TypeScript and Slim",
+                names: [
+                    "",
+                    "Static checks",
+                    "Runtime validation",
+                    "Data modelling",
+                    "API and external data",
+                    "Components",
+                    "Tooling",
+                    "Package manager"
+                ],
+                columns: [
+                    [
+                        "JavaScript",
+                        "No",
+                        "Manual",
+                        "Objects and classes",
+                        "Trust it or validate manually",
+                        "Native APIs or a framework",
+                        "Depends on the project",
+                        "NPM"
+                    ],
+                    [
+                        "TypeScript",
+                        "Yes",
+                        "Manual or libraries",
+                        "Interfaces and types",
+                        "Types are erased at runtime",
+                        "Native APIs or a framework",
+                        "Depends on the project",
+                        "NPM"
+                    ],
+                    [
+                        "Slim",
+                        "Yes, where possible",
+                        "Built in for typed values and structs",
+                        "Structs, enums, defaults, inheritance, validators",
+                        "Validate at the boundary with a struct or type",
+                        "Components and custom elements",
+                        "Compiler, formatter, test runner, REPL, dev server, and package manager",
+                        "NPM, SPM"
+                    ]
+                ],
+                className: "why-table"
+            })}
+
+            ${Spacer()}
+
+            <h1 class="&-title transparent">Not convincing?</h1>
+            <p class="&-description">Then take a look at what Slim can offer you in terms of data validation against JavaScript</p>
+        
+            ${CompImages({
+                first: "/public/media/snaps/code-js.png",
+                second: "/public/media/snaps/code-slim.png"
+            })}
+        </div>
+}

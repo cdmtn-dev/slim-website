@@ -1,0 +1,12 @@
+export struct CompImagesStruct {
+    first: string
+    second: string
+}
+
+export component CompImages(props: CompImagesStruct) {
+    return 
+        <div class="comp-images">
+            <img class="&__img" src="${props.first}">
+            <img class="&__img" src="${props.second}">
+        </div>
+}

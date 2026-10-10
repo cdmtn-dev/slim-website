@@ -1,0 +1,84 @@
+@import url("./css/blur-gradient.css");
+@import url("./css/buttons.css");
+@import url("./css/sections/why.css");
+
+@import url("./css/components/header.css");
+@import url("./css/components/hero.css");
+@import url("./css/components/table.css");
+@import url("./css/components/comp-images.css");
+
+:root {
+    --text-alt-color: white;
+    --text-color: black;
+    --main-font: Inter;
+
+    --divider: #ffffff1a;
+
+    --z-0: 0;
+    --z-1: 1;
+
+    --default-button-bg: white;
+    --default-button-bg-hovered: rgb(198, 198, 198);
+
+    --bg: black;
+
+    --table-bg: #ffffff0f;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text-color);
+    font-family: var(--main-font);
+    margin: 0;
+}
+
+.main {
+    letter-spacing: -0.5px;
+
+    p {
+        margin: 0;
+    }
+    h1 {
+        margin: 0;
+    }
+}
+
+.sections-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    border-top: 1px solid var(--divider);
+    flex-direction: column;
+
+    .section {
+        background: var(--bg);
+        width: 100%;
+        max-width: 1440px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        color: var(--text-alt-color);
+
+        .section-title {
+            background: var(--divider);
+            width: fit-content;
+            font-size: 50px;
+            letter-spacing: -3px;
+
+            &.transparent {
+                background: none;
+            }
+        }
+        .section-description {
+            font-size: 20px;
+            opacity: .5;
+            max-width: 50%;
+            line-height: 30px;
+            margin-top: 10px;
+        }
+    }
+}
+
+.spacer {
+    margin-top: 40px;
+}

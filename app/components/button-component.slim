@@ -1,0 +1,12 @@
+export struct LinkButtonStruct {
+    title: string
+    url: string
+    type?: string
+}
+
+export component LinkButton(props: LinkButtonStruct) {
+    const buttonType = props.type ?? "default"
+
+    return 
+        <a class="button ${buttonType}" href="${props.url}">${props.title}</a>
+}

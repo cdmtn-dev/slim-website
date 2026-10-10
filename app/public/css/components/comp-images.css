@@ -1,0 +1,12 @@
+.comp-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+
+    .comp-images__img {
+        width: 100%;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,27 @@
+use * as core from @slim
+
+use { Server, ServerInstance } from @slim/server
+use { replaceBackslashes } from @slim/helpers/path
+
+use { PUBLIC_PATH, SCRIPT_PATH } from "./paths"
+use { ServerSettings } from "./structures"
+
+use { Main } from "./components/main-page-components"
+
+const server: ServerInstance = new Server()
+
+let serverSettings: ServerSettings = {
+    head: [
+        `${PUBLIC_PATH}/main.css`,
+        `${SCRIPT_PATH}/links.js`,
+        `${SCRIPT_PATH}/main.js`
+    ],
+    icon: `${PUBLIC_PATH}/media/favicon.png`,
+    title: "Slim",
+}
+
+server.page("/", async () => {
+    return Main();
+}, serverSettings)
+
+server.start()

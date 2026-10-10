@@ -1,0 +1,35 @@
+use { BlurGradient } from "./blur-gradient-component"
+use { PUBLIC_PATH } from "../paths"
+use { GithubIcon } from "./icon-components"
+
+export component Header(props: HeaderStruct) {
+    const title = props.title ?? "Slim"
+    const links = props.links ?? {}
+
+    return 
+        <div class="header">
+            ${BlurGradient({
+                type: "top",
+                height: 100,
+                overlay: true
+            })}
+            <div class="&-section">
+                <img class="&__logo" src="${PUBLIC_PATH}/media/icon.svg">
+                <p class="&__title">${title}</p>
+            </div>
+            <div class="&-section links">
+                ${Object.keys(links).map(link => {
+                    return HeaderLink({ title: links[link].title, url: links[link].url })
+                })}
+            </div>
+            <div class="&-section">
+                <a href="/github">
+                    ${GithubIcon({ size: 25, color: "#fff" })}
+                </a>
+            </div>
+        </div>
+}
+
+export component HeaderLink(props: HeaderLinksStruct) {
+    return <a class="&" href="${props.url}">${props.title}</a>
+}

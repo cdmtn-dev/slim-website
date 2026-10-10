@@ -1,0 +1,38 @@
+export struct TableStruct {
+    title?: string,
+    names: string[]
+    columns: array
+    className?: string
+}
+
+export component TableName(props) {
+    return <th>${props.name}</th>
+}
+export component TableContent(props) {
+    return <td>${props.content}</td>
+}
+export component TableSection(props) {
+    return 
+        <tr>
+            ${props.column.map(item => {
+                return TableContent({ content: item})
+            })}
+        </tr>
+}
+
+export component Table(props: TableStruct) {
+    return 
+        <div class="table ${props.className ? props.className : ""}">
+            ${props.title ? `<p class="table-title">${props.title}</p>` : ""}
+            <table>
+                <tr>
+                    ${props.names.map(item => {
+                        return TableName({ name: item })
+                    })}
+                </tr>
+                ${props.columns.map(item => {
+                    return TableSection({ column: item })
+                })}
+            </table>
+        </div>
+}

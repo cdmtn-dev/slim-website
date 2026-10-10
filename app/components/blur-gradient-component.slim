@@ -1,0 +1,19 @@
+export struct BlurGradientStruct {
+	type?: string
+	height?: int
+	overlay?: bool
+}
+
+export component BlurGradient(props: BlurGradientStruct) {
+	const h = props.height ?? 20
+
+	return 
+		<div class="gradient-blur ${props.type} ${props.overlay ? "overlay" : ""}" style="height: ${h}px">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+}

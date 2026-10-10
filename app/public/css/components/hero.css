@@ -1,0 +1,47 @@
+.hero {
+    position: relative;
+
+    .keyword {
+        color: #f2dc18;
+    }
+
+    video {
+        width: 100%;
+        filter: sepia(1);
+    }
+    .hero-main {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        color: white;
+        left: 100px;
+        flex-direction: column;
+
+        .hero-main__title {
+            font-size: 80px;
+            letter-spacing: -2px;
+        }
+        .hero-main__description {
+            width: 70%;
+            font-size: 30px;
+            opacity: .5;
+            margin-top: 20px;
+
+            .hero-main__description__js-logo {
+                width: 25px;
+                vertical-align: -0.15em;
+                transform: rotate(3deg);
+            }
+        }
+
+        .hero-main__buttons {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+}

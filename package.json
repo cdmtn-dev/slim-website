@@ -1,0 +1,16 @@
+{
+    "name": "slim-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "slmc server"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "module",
+    "dependencies": {
+        "@slim-lang/core": "^1.2.12"
+    }
+}

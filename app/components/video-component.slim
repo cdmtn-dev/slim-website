@@ -1,0 +1,11 @@
+export struct VideoComponent {
+    url: string
+    id?: string
+}
+
+export component Video(props: VideoComponent) {
+    return 
+        <video autoplay muted loop ${props.id ? `id="${props.id}"` : ""}>
+            <source src="${props.url}">
+        </video>
+}
